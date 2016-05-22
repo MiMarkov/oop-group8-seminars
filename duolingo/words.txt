@@ -1,0 +1,6 @@
+paper
+papel
+apple
+manzana
+horse
+caballo

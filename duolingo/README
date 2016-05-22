@@ -1,0 +1,7 @@
+A duolingo-inspired project for generating tests for learning a foreign language.
+Support for a variety of questions and randomized question choice.
+
+Covered topics:
++ virtual functions and pure virtual functions
++ inheritance and polymorphism
++ serialization/deserialization of arrays with heterogeneous elements
