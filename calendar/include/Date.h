@@ -1,5 +1,5 @@
-#ifndef DATE_H
-#define DATE_H
+#ifndef DATE_H_INCLUDED
+#define DATE_H_INCLUDED
 
 #include <iostream>
 class Date
@@ -21,11 +21,13 @@ class Date
         bool isLeapYear() const;
         friend std::ostream& operator<< (std::ostream&, const Date&);
         friend std::istream& operator>> (std::istream&, Date&);
+        Date& operator=(const Date&);
+        int getYear() const;
     protected:
     private:
-        int year;
-        int month;
-        int day;
+        int m_year;
+        int m_month;
+        int m_day;
 };
 
-#endif // DATE_H
+#endif // DATE_H_INCLUDED

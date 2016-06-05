@@ -1,5 +1,5 @@
-#ifndef EVENT_H
-#define EVENT_H
+#ifndef EVENT_H_INCLUDED
+#define EVENT_H_INCLUDED
 
 #include <iostream>
 #include <string>
@@ -8,18 +8,25 @@ class Event
 {
     public:
         Event(const Date&, int, int,
-             std::string title = "<Untitled Event>", std::string description= "");
+             std::string title = "<Untitled Event>", std::string description= "",std::string place="");
         virtual ~Event();
         virtual bool isInProgress(const Date&, int) const;
+        bool isHappeningAt(std::string ,const Date& , int) const;
         friend std::ostream& operator<< (std::ostream&, const Event&);
         friend std::istream& operator>> (std::istream&, Event&);
+        friend bool operator<(const Event&, const Event&);
+        friend bool operator>(const Event&, const Event&);
+        Event& operator=(const Event&);
+        int getCentury() const;
+        int eventLength() const;
     protected:
-        Date date;
-        int startHour;
-        int endHour;
-        std::string title;
-        std::string description;
+        Date m_date;
+        int m_startHour;
+        int m_endHour;
+        std::string m_title;
+        std::string m_description;
+        std::string m_place;
         virtual std::ostream& write(std::ostream& out) const;
 };
 
-#endif // EVENT_H
+#endif // EVENT_H_INCLUDED
